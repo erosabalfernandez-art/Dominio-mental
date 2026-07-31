@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { FaBrain, FaClock, FaShieldAlt, FaBullseye } from 'react-icons/fa';
 import { GiBrain, GiAnvil, GiHelmet, GiSandsOfTime } from 'react-icons/gi';
 import { AiFillStar } from 'react-icons/ai';
-import heroBg from '@assets/generated_images/hero-bg.jpg';
+import heroBg from '@assets/generated_images/hero-figure.jpg';
 import checklistBg from '@assets/generated_images/checklist-bg.jpg';
 import quoteBg from '@assets/generated_images/quote-bg.jpg';
 
