@@ -408,6 +408,14 @@ function PriceBlock({ id }: { id?: string }) {
     if (isInView) setTimeout(() => setStruck(true), 400);
   }, [isInView]);
 
+  useEffect(() => {
+    if (document.querySelector('script[src="https://static.hotmart.com/checkout/widget.min.js"]')) return;
+    const script = document.createElement('script');
+    script.src = 'https://static.hotmart.com/checkout/widget.min.js';
+    script.type = 'text/javascript';
+    document.head.appendChild(script);
+  }, []);
+
   return (
     <FadeIn className="bg-[#111111] py-10 md:py-14 px-4">
       <div ref={ref} id={id} className="max-w-xl mx-auto text-center">
@@ -430,17 +438,14 @@ function PriceBlock({ id }: { id?: string }) {
         </div>
         <p className="text-gray-500 text-sm mb-6">Pago único. Sin suscripciones ocultas.</p>
 
-        <CTAButton className="w-full max-w-sm">QUIERO DOMINAR MI MENTE</CTAButton>
-
-        <div className="mt-8 border border-dashed border-gray-700/60 p-6 rounded">
-          {/*
-            ==========================================
-            PEGAR ACÁ EL CÓDIGO DEL WIDGET DE HOTMART
-            ==========================================
-          */}
-          <p className="text-gray-600 text-xs">
-            [ Botón de pago Hotmart — pegar script aquí ]
-          </p>
+        <div className="flex justify-center">
+          <a
+            onClick={() => false}
+            href="https://pay.hotmart.com/Y106958140E?checkoutMode=2"
+            className="hotmart-fb hotmart__button-checkout"
+          >
+            <img src="https://static.hotmart.com/img/btn-buy-green.png" alt="Comprar ahora" />
+          </a>
         </div>
       </div>
     </FadeIn>
