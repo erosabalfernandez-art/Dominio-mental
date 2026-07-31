@@ -211,13 +211,13 @@ function HeroSection() {
         </div>
 
         {/* RIGHT: philosopher image */}
-        <div className="relative overflow-hidden">
+        <div className="relative h-[62vw] md:h-auto overflow-hidden">
           <img
             src={heroBg}
             alt=""
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0A0A0A] md:bg-gradient-to-r md:from-[#0A0A0A] md:via-[#0A0A0A]/20 md:to-transparent" />
         </div>
       </div>
     </section>
@@ -311,9 +311,9 @@ function ChecklistSection() {
         </FadeIn>
 
         {/* RIGHT: dark scholar image */}
-        <div className="relative hidden md:block">
+        <div className="relative h-[60vw] md:h-auto overflow-hidden">
           <img src={checklistBg} alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0D] via-[#0D0D0D]/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0D0D0D] via-transparent to-transparent md:bg-gradient-to-r md:from-[#0D0D0D] md:via-[#0D0D0D]/30 md:to-transparent" />
         </div>
       </div>
     </section>
@@ -364,9 +364,9 @@ function ImpactQuote() {
     <section className="relative overflow-hidden bg-[#0A0A0A]">
       <div className="grid md:grid-cols-2">
         {/* LEFT: philosopher image */}
-        <div className="relative h-56 md:h-auto">
+        <div className="relative h-[60vw] md:h-auto overflow-hidden">
           <img src={quoteBg} alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#0A0A0A]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] md:bg-gradient-to-r md:from-transparent md:to-[#0A0A0A]" />
         </div>
 
         {/* RIGHT: quote text */}
