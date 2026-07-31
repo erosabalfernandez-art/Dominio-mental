@@ -444,7 +444,7 @@ function PriceBlock({ id }: { id?: string }) {
             href="https://pay.hotmart.com/Y106958140E?checkoutMode=2"
             className="hotmart-fb hotmart__button-checkout"
           >
-            <img src="https://static.hotmart.com/img/btn-buy-green.png" alt="Comprar ahora" />
+            <span className="inline-block bg-green-500 hover:bg-green-600 active:bg-green-700 text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg transition-all duration-200 cursor-pointer tracking-wide">Comprar Ahora</span>
           </a>
         </div>
       </div>
