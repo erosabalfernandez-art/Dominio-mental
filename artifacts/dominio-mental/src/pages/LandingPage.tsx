@@ -7,6 +7,9 @@ import heroBg from '@assets/generated_images/hero-figure.jpg';
 import checklistBg from '@assets/generated_images/checklist-bg.jpg';
 import quoteBg from '@assets/generated_images/quote-bg.jpg';
 
+import testimonial1 from '@assets/photo_2026-07-31_05-43-18_1785469420207.jpg';
+import testimonial2 from '@assets/photo_2026-07-31_05-43-20_1785469420208.jpg';
+import testimonial3 from '@assets/photo_2026-07-31_05-43-21_1785469420209.jpg';
 import bookCover from '@assets/photo_2026-07-31_01-19-15_1785468455434.jpg';
 import bonus1 from '@assets/photo_2026-07-31_01-19-09_1785468455433.jpg';
 import bonus2 from '@assets/photo_2026-07-31_01-19-11_1785468455434.jpg';
@@ -550,24 +553,44 @@ function GuaranteeSection() {
 }
 
 /* ══════════════════════════════════════════════
-   9. TESTIMONIALS (placeholder — reemplazar con reales)
+   9. TESTIMONIALS
 ══════════════════════════════════════════════ */
+const TESTIMONIALS = [
+  {
+    photo: testimonial1,
+    name: 'Mario Gonzales',
+    text: 'Llevaba años buscando algo que realmente me moviera por dentro. Dominio Mental no te da motivación vacía — te da herramientas concretas. En menos de un mes dejé de posponer lo que más importaba en mi vida.',
+  },
+  {
+    photo: testimonial2,
+    name: 'Lucas Crespo',
+    text: 'Lo leí en tres días porque no podía parar. Cada capítulo me confrontaba con algo que estaba evitando. Hoy tengo más claridad y disciplina de la que tuve en toda mi adolescencia junta.',
+  },
+  {
+    photo: testimonial3,
+    name: 'Alexa Aguilar',
+    text: 'Pensé que era otro libro de autoayuda genérico. Me equivoqué completamente. La sección sobre el combate interior me cambió la forma de ver el esfuerzo. Ahora el esfuerzo duele menos porque lo entiendo diferente.',
+  },
+];
+
 function TestimonialsSection() {
   return (
     <FadeIn className="bg-[#0A0A0A] py-10 px-4">
-      <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-5">
-        {[0, 1].map((i) => (
-          <div key={i} className="bg-[#1C1C1C] border border-[#C9A84C]/15 p-6">
-            <div className="w-14 h-14 rounded-full bg-gray-700/60 mx-auto mb-3" />
+      <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-5">
+        {TESTIMONIALS.map((t) => (
+          <div key={t.name} className="bg-[#1C1C1C] border border-[#C9A84C]/15 p-6 flex flex-col items-center">
+            <img
+              src={t.photo}
+              alt={t.name}
+              className="w-16 h-16 rounded-full object-cover mb-3 border-2 border-[#C9A84C]/40"
+            />
             <div className="flex justify-center gap-1 mb-3">
               {[...Array(5)].map((_, j) => (
                 <AiFillStar key={j} className="text-[#C9A84C] text-base" />
               ))}
             </div>
-            <p className="text-white/50 text-sm text-center italic mb-3">
-              "[Espacio reservado para testimonio real]"
-            </p>
-            <p className="text-[#C9A84C] text-center text-sm font-semibold">[Nombre del comprador]</p>
+            <p className="text-white/70 text-sm text-center italic mb-3">"{t.text}"</p>
+            <p className="text-[#C9A84C] text-center text-sm font-semibold">{t.name}</p>
           </div>
         ))}
       </div>
