@@ -157,6 +157,12 @@ function GoldDivider() {
 function HeroSection() {
   return (
     <section className="relative bg-[#0A0A0A] overflow-hidden">
+      {/* Mobile background image */}
+      <div className="absolute inset-0 md:hidden">
+        <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
+        <div className="absolute inset-0 bg-[#0A0A0A]/65" />
+      </div>
+
       <div className="grid md:grid-cols-2 min-h-[85vw] md:min-h-[70vh]">
         {/* LEFT: text */}
         <div className="relative z-10 flex flex-col justify-center px-6 md:px-10 py-10 md:py-12">
@@ -210,14 +216,14 @@ function HeroSection() {
           </motion.div>
         </div>
 
-        {/* RIGHT: philosopher image */}
-        <div className="relative h-[62vw] md:h-auto overflow-hidden">
+        {/* RIGHT: philosopher image (desktop only) */}
+        <div className="hidden md:block relative overflow-hidden">
           <img
             src={heroBg}
             alt=""
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0A0A0A] md:bg-gradient-to-r md:from-[#0A0A0A] md:via-[#0A0A0A]/20 md:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/20 to-transparent" />
         </div>
       </div>
     </section>
@@ -285,6 +291,12 @@ const checklistItems = [
 function ChecklistSection() {
   return (
     <section className="relative overflow-hidden bg-[#0D0D0D]">
+      {/* Mobile background image */}
+      <div className="absolute inset-0 md:hidden">
+        <img src={checklistBg} alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
+        <div className="absolute inset-0 bg-[#0D0D0D]/75" />
+      </div>
+
       <div className="grid md:grid-cols-2">
         {/* LEFT: content */}
         <FadeIn className="relative z-10 py-10 md:py-14 px-6 md:px-10">
@@ -310,10 +322,10 @@ function ChecklistSection() {
           </div>
         </FadeIn>
 
-        {/* RIGHT: dark scholar image */}
-        <div className="relative h-[60vw] md:h-auto overflow-hidden">
+        {/* RIGHT: dark scholar image (desktop only) */}
+        <div className="relative hidden md:block">
           <img src={checklistBg} alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0D0D0D] via-transparent to-transparent md:bg-gradient-to-r md:from-[#0D0D0D] md:via-[#0D0D0D]/30 md:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0D] via-[#0D0D0D]/30 to-transparent" />
         </div>
       </div>
     </section>
@@ -362,11 +374,17 @@ function PillarsSection() {
 function ImpactQuote() {
   return (
     <section className="relative overflow-hidden bg-[#0A0A0A]">
+      {/* Mobile background image */}
+      <div className="absolute inset-0 md:hidden">
+        <img src={quoteBg} alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
+        <div className="absolute inset-0 bg-[#0A0A0A]/70" />
+      </div>
+
       <div className="grid md:grid-cols-2">
-        {/* LEFT: philosopher image */}
-        <div className="relative h-[60vw] md:h-auto overflow-hidden">
+        {/* LEFT: philosopher image (desktop only) */}
+        <div className="relative hidden md:block">
           <img src={quoteBg} alt="" className="absolute inset-0 w-full h-full object-cover object-center" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A0A0A] md:bg-gradient-to-r md:from-transparent md:to-[#0A0A0A]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#0A0A0A]" />
         </div>
 
         {/* RIGHT: quote text */}
