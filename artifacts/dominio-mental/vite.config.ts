@@ -1,14 +1,14 @@
 import path from 'path';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
-import { defineConfig } from 'vite';
+import { defineConfig, type UserConfig } from 'vite';
 
 // PORT and BASE_PATH are provided by the Replit workflow; fall back to
 // sensible defaults so `vite build` works anywhere (Vercel, local dev, etc.).
 const port = Number(process.env.PORT ?? 3000);
 const basePath = process.env.BASE_PATH ?? '/';
 
-export default defineConfig(async () => ({
+export default defineConfig(async (): Promise<UserConfig> => ({
   base: basePath,
   plugins: [
     react(),
@@ -41,7 +41,7 @@ export default defineConfig(async () => ({
     host: '0.0.0.0',
     allowedHosts: true,
     fs: {
-      strict: false, // allow imports from attached_assets (outside the artifact root)
+      strict: false,
     },
   },
   preview: {
