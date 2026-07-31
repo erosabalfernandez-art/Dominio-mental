@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Dominio Mental — Página de Ventas"
+version = "1.0.0"
+id = "artifacts/dominio-mental"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18984
+
+[services.development]
+run = "pnpm --filter @workspace/dominio-mental run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/dominio-mental", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/dominio-mental/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18984"
+BASE_PATH = "/"
