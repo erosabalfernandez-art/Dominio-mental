@@ -450,7 +450,7 @@ function PriceBlock({ id }: { id?: string }) {
 
         <div className="flex justify-center">
           <a
-            onclick="return false;"
+            onClick={() => false}
             href="https://pay.hotmart.com/Y106958140E?checkoutMode=2"
             className="hotmart-fb hotmart__button-checkout"
           >
