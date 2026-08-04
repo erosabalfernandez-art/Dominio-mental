@@ -426,14 +426,6 @@ function PriceBlock({ id }: { id?: string }) {
     if (isInView) setTimeout(() => setStruck(true), 400);
   }, [isInView]);
 
-  useEffect(() => {
-    if (document.querySelector('script[src="https://static.hotmart.com/checkout/widget.min.js"]')) return;
-    const script = document.createElement('script');
-    script.src = 'https://static.hotmart.com/checkout/widget.min.js';
-    script.type = 'text/javascript';
-    document.head.appendChild(script);
-  }, []);
-
   return (
     <FadeIn className="bg-[#111111] py-10 md:py-14 px-4">
       <div ref={ref} id={id} className="max-w-xl mx-auto text-center">
@@ -458,11 +450,11 @@ function PriceBlock({ id }: { id?: string }) {
 
         <div className="flex justify-center">
           <a
-            onClick={() => false}
+            onclick="return false;"
             href="https://pay.hotmart.com/Y106958140E?checkoutMode=2"
             className="hotmart-fb hotmart__button-checkout"
           >
-            <span className="inline-block bg-green-500 hover:bg-green-600 active:bg-green-700 text-white font-bold text-lg px-10 py-4 rounded-full shadow-lg transition-all duration-200 cursor-pointer tracking-wide">Comprar Ahora</span>
+            <img src="https://static.hotmart.com/img/btn-buy-green.png" alt="Comprar" />
           </a>
         </div>
       </div>
