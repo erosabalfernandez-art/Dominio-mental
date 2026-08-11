@@ -10,11 +10,11 @@ import quoteBg from '@assets/generated_images/quote-bg.jpg';
 import testimonial1 from '@assets/photo_2026-07-31_05-43-18_1785469420207.jpg';
 import testimonial2 from '@assets/photo_2026-07-31_05-43-20_1785469420208.jpg';
 import testimonial3 from '@assets/photo_2026-07-31_05-43-21_1785469420209.jpg';
-import bookCover from '@assets/photo_2026-07-31_01-19-15_1785468455434.jpg';
-import bonus1 from '@assets/photo_2026-07-31_01-19-09_1785468455433.jpg';
-import bonus2 from '@assets/photo_2026-07-31_01-19-11_1785468455434.jpg';
-import bonus3 from '@assets/photo_2026-07-31_01-19-13_1785468455434.jpg';
-import bonus4 from '@assets/photo_2026-07-31_00-37-41_1785468455432.jpg';
+import bookCover from '@assets/photo_2026-08-11_15-26-33_1786454827441.jpg';
+import bonus1 from '@assets/photo_2026-08-11_15-26-21_1786454827439.jpg';
+import bonus2 from '@assets/photo_2026-08-11_15-26-27_1786454827440.jpg';
+import bonus3 from '@assets/photo_2026-08-11_15-26-18_1786454827439.jpg';
+import bonus4 from '@assets/photo_2026-08-11_15-26-30_1786454827440.jpg';
 
 /* ─── COUNTDOWN ─── */
 function useCountdown(initialHours: number = 24) {
