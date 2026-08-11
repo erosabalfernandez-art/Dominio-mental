@@ -50,9 +50,9 @@ function useCountdown(initialHours: number = 24) {
 function TimerBar() {
   const { hours, minutes, seconds } = useCountdown(24);
   return (
-    <div className="w-full bg-gradient-to-r from-[#4A0808] via-[#6B0F0F] to-[#4A0808] py-2.5 px-4 flex items-center justify-center gap-4 text-white border-b border-[#C9A84C]/20">
+    <div className="w-full bg-gradient-to-r from-[#4A0808] via-[#6B0F0F] to-[#4A0808] py-2.5 px-4 flex items-center justify-center gap-4 text-white border-b border-[#B12D3B]/20">
       <div className="flex items-center gap-2">
-        <FaClock className="text-[#C9A84C] flex-shrink-0 text-sm animate-pulse" />
+        <FaClock className="text-[#B12D3B] flex-shrink-0 text-sm animate-pulse" />
         <span
           className="tracking-[0.2em] uppercase text-sm md:text-base text-white/90"
           style={{ fontFamily: "'Oswald', sans-serif", fontWeight: 600, letterSpacing: '0.18em' }}
@@ -61,7 +61,7 @@ function TimerBar() {
         </span>
       </div>
 
-      <div className="w-px h-4 bg-[#C9A84C]/40" />
+      <div className="w-px h-4 bg-[#B12D3B]/40" />
 
       <div className="hidden md:flex items-center gap-2">
         <span
@@ -71,34 +71,34 @@ function TimerBar() {
           $47
         </span>
         <span
-          className="text-[#C9A84C] text-lg leading-none"
+          className="text-[#B12D3B] text-lg leading-none"
           style={{ fontFamily: "'Bebas Neue', 'Oswald', sans-serif", letterSpacing: '0.05em' }}
         >
           $15
         </span>
         <span
-          className="bg-[#C9A84C] text-black text-xs font-black px-1.5 py-0.5 uppercase tracking-wide"
+          className="bg-[#B12D3B] text-white text-xs font-black px-1.5 py-0.5 uppercase tracking-wide"
           style={{ fontFamily: "'Oswald', sans-serif" }}
         >
           –68%
         </span>
       </div>
 
-      <div className="hidden md:block w-px h-4 bg-[#C9A84C]/40" />
+      <div className="hidden md:block w-px h-4 bg-[#B12D3B]/40" />
 
       <div className="flex items-center gap-1" style={{ fontFamily: "'Bebas Neue', 'Oswald', sans-serif" }}>
         {[hours, minutes, seconds].map((val, i) => (
           <div key={i} className="flex items-center gap-1">
             <div className="flex flex-col items-center">
               <span
-                className="bg-black/50 border border-[#C9A84C]/30 px-2.5 py-0.5 text-[#C9A84C] text-lg md:text-xl leading-none transition-all duration-300"
+                className="bg-black/50 border border-[#B12D3B]/40 px-2.5 py-0.5 text-[#D24A59] text-lg md:text-xl leading-none transition-all duration-300"
                 style={{ minWidth: '2.2rem', textAlign: 'center', letterSpacing: '0.05em' }}
               >
                 {val}
               </span>
             </div>
             {i < 2 && (
-              <span className="text-[#C9A84C] text-lg font-bold leading-none mb-0.5">:</span>
+              <span className="text-[#D24A59] text-lg font-bold leading-none mb-0.5">:</span>
             )}
           </div>
         ))}
@@ -133,20 +133,20 @@ function CTAButton({ children, className = '' }: { children: React.ReactNode; cl
   return (
     <button
       onClick={handleClick}
-      className={`bg-[#C9A84C] text-black font-black text-base md:text-lg px-8 py-3 uppercase tracking-widest hover:shadow-[0_0_30px_rgba(201,168,76,0.6)] transition-all duration-300 ${className}`}
+      className={`bg-[#B12D3B] text-white font-black text-base md:text-lg px-8 py-3 uppercase tracking-widest hover:bg-[#D24A59] hover:shadow-[0_0_30px_rgba(177,45,59,0.6)] transition-all duration-300 ${className}`}
     >
       {children}
     </button>
   );
 }
 
-/* ─── GOLD DIVIDER ─── */
-function GoldDivider() {
+/* ─── CRIMSON DIVIDER ─── */
+function CrimsonDivider() {
   return (
     <div className="flex items-center justify-center gap-3 my-4">
-      <div className="h-px w-12 bg-gradient-to-r from-transparent to-[#C9A84C]" />
-      <div className="w-1.5 h-1.5 bg-[#C9A84C] rotate-45" />
-      <div className="h-px w-12 bg-gradient-to-l from-transparent to-[#C9A84C]" />
+      <div className="h-px w-12 bg-gradient-to-r from-transparent to-[#B12D3B]" />
+      <div className="w-1.5 h-1.5 bg-[#B12D3B] rotate-45" />
+      <div className="h-px w-12 bg-gradient-to-l from-transparent to-[#B12D3B]" />
     </div>
   );
 }
@@ -170,13 +170,13 @@ function HeroSection() {
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, ease: 'easeOut' }}
-            className="font-black text-5xl md:text-6xl lg:text-7xl text-[#C9A84C] leading-none tracking-widest mb-3"
-            style={{ fontFamily: "'EB Garamond', Georgia, serif", textShadow: '0 0 40px rgba(201,168,76,0.35)' }}
+            className="font-black text-5xl md:text-6xl lg:text-7xl text-[#D24A59] leading-none tracking-widest mb-3"
+            style={{ fontFamily: "'EB Garamond', Georgia, serif", textShadow: '0 0 40px rgba(177,45,59,0.4)' }}
           >
             DOMINIO<br />MENTAL
           </motion.h1>
 
-          <GoldDivider />
+          <CrimsonDivider />
 
           <motion.p
             initial={{ opacity: 0, x: -30 }}
@@ -192,7 +192,7 @@ function HeroSection() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, delay: 0.4, ease: 'easeOut' }}
-            className="text-[#8B1A1A] font-black text-lg md:text-xl uppercase tracking-wide mb-2"
+            className="text-[#A52A3A] font-black text-lg md:text-xl uppercase tracking-wide mb-2"
             style={{ fontFamily: "'Oswald', sans-serif" }}
           >
             ES UN ARMA.
@@ -238,7 +238,7 @@ function PromiseSection() {
     <FadeIn className="bg-[#111111] py-10 md:py-14 px-6 md:px-10">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
         <div>
-          <p className="text-[#8B1A1A] font-black text-xl md:text-2xl uppercase tracking-wide mb-2"
+          <p className="text-[#A52A3A] font-black text-xl md:text-2xl uppercase tracking-wide mb-2"
              style={{ fontFamily: "'Oswald', sans-serif" }}>
             EN 30 DÍAS,
           </p>
@@ -246,11 +246,11 @@ function PromiseSection() {
               style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>
             DEJÁS DE SOBREVIVIR Y EMPEZÁS A GOBERNARTE A TI MISMO.
           </h2>
-          <GoldDivider />
+          <CrimsonDivider />
           <p className="text-white/75 text-sm md:text-base leading-relaxed mt-3">
             No vas a "sentirte mejor". Vas a sustituir hábitos débiles por disciplina, enfoque y fuerza mental.
           </p>
-          <p className="text-[#C9A84C] text-sm mt-3 italic">
+          <p className="text-[#D24A59] text-sm mt-3 italic">
             Un protocolo estoico de 30 días, aplicado al mundo real.
           </p>
         </div>
@@ -261,14 +261,14 @@ function PromiseSection() {
               src={bookCover}
               alt="Dominio Mental"
               className="w-52 md:w-64 shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500"
-              style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.9), 0 0 30px rgba(201,168,76,0.15)' }}
+              style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.9), 0 0 30px rgba(177,45,59,0.2)' }}
             />
           ) : (
             <div
-              className="w-52 md:w-64 bg-[#1a1a1a] border border-[#C9A84C]/30 flex items-center justify-center rotate-2 hover:rotate-0 transition-transform duration-500"
-              style={{ aspectRatio: '3/4', boxShadow: '0 20px 60px rgba(0,0,0,0.9), 0 0 30px rgba(201,168,76,0.15)' }}
+              className="w-52 md:w-64 bg-[#1a1a1a] border border-[#B12D3B]/40 flex items-center justify-center rotate-2 hover:rotate-0 transition-transform duration-500"
+              style={{ aspectRatio: '3/4', boxShadow: '0 20px 60px rgba(0,0,0,0.9), 0 0 30px rgba(177,45,59,0.2)' }}
             >
-              <p className="text-[#C9A84C]/60 text-xs text-center px-4">Portada del libro</p>
+              <p className="text-[#D24A59]/70 text-xs text-center px-4">Portada del libro</p>
             </div>
           )}
         </div>
@@ -300,11 +300,11 @@ function ChecklistSection() {
       <div className="grid md:grid-cols-2">
         {/* LEFT: content */}
         <FadeIn className="relative z-10 py-10 md:py-14 px-6 md:px-10">
-          <h2 className="text-3xl md:text-4xl font-black text-[#C9A84C] mb-2"
+          <h2 className="text-3xl md:text-4xl font-black text-[#D24A59] mb-2"
               style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>
             ¿QUÉ VAS A APRENDER?
           </h2>
-          <GoldDivider />
+          <CrimsonDivider />
           <div className="space-y-5 mt-5">
             {checklistItems.map((item, i) => (
               <motion.div
@@ -315,7 +315,7 @@ function ChecklistSection() {
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="flex gap-3 items-start"
               >
-                <item.icon className="text-[#C9A84C] text-xl flex-shrink-0 mt-0.5" />
+                <item.icon className="text-[#D24A59] text-xl flex-shrink-0 mt-0.5" />
                 <p className="text-white/85 text-sm md:text-base leading-snug">{item.text}</p>
               </motion.div>
             ))}
@@ -353,10 +353,10 @@ function PillarsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
-            className="flex flex-col items-center text-center p-4 border border-[#C9A84C]/20 hover:border-[#C9A84C]/60 transition-all duration-300"
+            className="flex flex-col items-center text-center p-4 border border-[#B12D3B]/25 hover:border-[#D24A59]/70 transition-all duration-300"
           >
-            <p.icon className="text-[#C9A84C] text-3xl mb-2" />
-            <p className="text-[#C9A84C] font-black text-xs md:text-sm uppercase tracking-wide leading-tight mb-1"
+            <p.icon className="text-[#D24A59] text-3xl mb-2" />
+            <p className="text-[#D24A59] font-black text-xs md:text-sm uppercase tracking-wide leading-tight mb-1"
                style={{ fontFamily: "'Oswald', sans-serif" }}>
               {p.title}
             </p>
@@ -389,21 +389,21 @@ function ImpactQuote() {
 
         {/* RIGHT: quote text */}
         <FadeIn className="relative z-10 flex flex-col justify-center py-10 md:py-14 px-6 md:px-10">
-          <div className="border border-[#C9A84C]/40 p-6 md:p-8 relative">
-            <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#C9A84C] -translate-x-0.5 -translate-y-0.5" />
-            <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#C9A84C] translate-x-0.5 -translate-y-0.5" />
-            <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[#C9A84C] -translate-x-0.5 translate-y-0.5" />
-            <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#C9A84C] translate-x-0.5 translate-y-0.5" />
+          <div className="border border-[#B12D3B]/50 p-6 md:p-8 relative">
+            <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#D24A59] -translate-x-0.5 -translate-y-0.5" />
+            <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#D24A59] translate-x-0.5 -translate-y-0.5" />
+            <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[#D24A59] -translate-x-0.5 translate-y-0.5" />
+            <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#D24A59] translate-x-0.5 translate-y-0.5" />
 
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white mb-3 leading-tight"
                 style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>
               LA MENTE ES LO QUE PRECEDE A TODO.
             </h2>
-            <p className="text-[#8B1A1A] font-black text-xl md:text-2xl mb-2 uppercase tracking-wide"
+            <p className="text-[#A52A3A] font-black text-xl md:text-2xl mb-2 uppercase tracking-wide"
                style={{ fontFamily: "'Oswald', sans-serif" }}>
               30 DÍAS PARA TRANSFORMAR TU MENTE.
             </p>
-            <p className="text-[#C9A84C] font-black text-2xl md:text-3xl uppercase tracking-widest"
+            <p className="text-[#D24A59] font-black text-2xl md:text-3xl uppercase tracking-widest"
                style={{ fontFamily: "'Bebas Neue', 'Oswald', sans-serif" }}>
               PARA SIEMPRE.
             </p>
@@ -429,7 +429,7 @@ function PriceBlock({ id }: { id?: string }) {
   return (
     <FadeIn className="bg-[#111111] py-10 md:py-14 px-4">
       <div ref={ref} id={id} className="max-w-xl mx-auto text-center">
-        <p className="text-[#C9A84C] uppercase tracking-widest text-xs font-bold mb-4"
+        <p className="text-[#D24A59] uppercase tracking-widest text-xs font-bold mb-4"
            style={{ fontFamily: "'Oswald', sans-serif" }}>
           OBTENÉ ACCESO COMPLETO
         </p>
@@ -442,7 +442,7 @@ function PriceBlock({ id }: { id?: string }) {
           />
         </div>
 
-        <div className="text-[#C9A84C] text-7xl md:text-8xl font-black mb-2"
+        <div className="text-[#D24A59] text-7xl md:text-8xl font-black mb-2"
              style={{ fontFamily: "'Bebas Neue', 'Oswald', sans-serif" }}>
           $15
         </div>
@@ -454,7 +454,11 @@ function PriceBlock({ id }: { id?: string }) {
             href="https://pay.hotmart.com/Y106958140E?checkoutMode=2"
             className="hotmart-fb hotmart__button-checkout"
           >
-            <img src="https://static.hotmart.com/img/btn-buy-green.png" alt="Comprar" />
+            <span
+              className="inline-flex items-center justify-center bg-[#B12D3B] hover:bg-[#D24A59] text-white font-black uppercase tracking-[0.18em] px-8 py-3 transition-colors duration-300"
+            >
+              Comprar ahora
+            </span>
           </a>
         </div>
       </div>
@@ -483,8 +487,8 @@ function BonusSection() {
           </p>
           <h2 className="text-3xl md:text-5xl font-black text-white"
               style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>
-            + <span className="text-[#C9A84C]">4</span> E-BOOKS<br className="md:hidden" />
-            <span className="text-[#C9A84C]"> BONOS EXCLUSIVOS</span>
+            + <span className="text-[#D24A59]">4</span> E-BOOKS<br className="md:hidden" />
+            <span className="text-[#D24A59]"> BONOS EXCLUSIVOS</span>
           </h2>
         </div>
 
@@ -506,10 +510,10 @@ function BonusSection() {
                 />
               ) : (
                 <div
-                  className="w-full bg-[#1a1a1a] border border-[#C9A84C]/20 flex items-center justify-center hover:scale-105 transition-transform duration-300"
+                  className="w-full bg-[#1a1a1a] border border-[#B12D3B]/30 flex items-center justify-center hover:scale-105 transition-transform duration-300"
                   style={{ aspectRatio: '3/4' }}
                 >
-                  <p className="text-[#C9A84C]/50 text-xs text-center px-2">{b.title}</p>
+                  <p className="text-[#D24A59]/60 text-xs text-center px-2">{b.title}</p>
                 </div>
               )}
             </motion.div>
@@ -525,11 +529,11 @@ function BonusSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="flex gap-3 items-start border border-[#C9A84C]/15 p-4"
+              className="flex gap-3 items-start border border-[#B12D3B]/25 p-4"
             >
-              <FaShieldAlt className="text-[#C9A84C] text-lg flex-shrink-0 mt-0.5" />
+              <FaShieldAlt className="text-[#D24A59] text-lg flex-shrink-0 mt-0.5" />
               <div>
-                <p className="text-[#C9A84C] font-black text-sm md:text-base"
+                <p className="text-[#D24A59] font-black text-sm md:text-base"
                    style={{ fontFamily: "'Oswald', sans-serif" }}>
                   {b.title}
                 </p>
@@ -550,10 +554,10 @@ function GuaranteeSection() {
   return (
     <FadeIn className="bg-[#111111] py-8 px-4">
       <div className="max-w-xl mx-auto">
-        <div className="border border-[#C9A84C]/30 p-6 md:p-8 flex gap-5 items-center">
-          <FaShieldAlt className="text-[#C9A84C] text-5xl flex-shrink-0" />
+        <div className="border border-[#B12D3B]/35 p-6 md:p-8 flex gap-5 items-center">
+          <FaShieldAlt className="text-[#D24A59] text-5xl flex-shrink-0" />
           <div>
-            <h3 className="text-xl md:text-2xl font-black text-[#C9A84C] mb-1"
+            <h3 className="text-xl md:text-2xl font-black text-[#D24A59] mb-1"
                 style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>
               Garantía de 7 días
             </h3>
@@ -593,19 +597,19 @@ function TestimonialsSection() {
     <FadeIn className="bg-[#0A0A0A] py-10 px-4">
       <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-5">
         {TESTIMONIALS.map((t) => (
-          <div key={t.name} className="bg-[#1C1C1C] border border-[#C9A84C]/15 p-6 flex flex-col items-center">
+          <div key={t.name} className="bg-[#1C1C1C] border border-[#B12D3B]/25 p-6 flex flex-col items-center">
             <img
               src={t.photo}
               alt={t.name}
-              className="w-16 h-16 rounded-full object-cover mb-3 border-2 border-[#C9A84C]/40"
+              className="w-16 h-16 rounded-full object-cover mb-3 border-2 border-[#B12D3B]/50"
             />
             <div className="flex justify-center gap-1 mb-3">
               {[...Array(5)].map((_, j) => (
-                <AiFillStar key={j} className="text-[#C9A84C] text-base" />
+                <AiFillStar key={j} className="text-[#D24A59] text-base" />
               ))}
             </div>
             <p className="text-white/70 text-sm text-center italic mb-3">"{t.text}"</p>
-            <p className="text-[#C9A84C] text-center text-sm font-semibold">{t.name}</p>
+            <p className="text-[#D24A59] text-center text-sm font-semibold">{t.name}</p>
           </div>
         ))}
       </div>
