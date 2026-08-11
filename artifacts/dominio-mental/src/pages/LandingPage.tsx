@@ -151,6 +151,48 @@ function CrimsonDivider() {
   );
 }
 
+/* ─── BOOK MOCKUP ─── */
+function BookMockup({
+  image,
+  title,
+  featured = false,
+}: {
+  image: string;
+  title: string;
+  featured?: boolean;
+}) {
+  return (
+    <figure
+      className={`book-float book-scene relative mx-auto ${
+        featured ? 'w-56 md:w-72' : 'w-full'
+      }`}
+      aria-label={`Libro: ${title}`}
+    >
+      <div className="book-shell relative ml-2 md:ml-3">
+        <div
+          className="book-spine absolute left-0 top-1 bottom-1 z-0 w-3 -translate-x-[calc(100%-2px)] rounded-l-sm"
+          aria-hidden="true"
+        />
+        <div
+          className="book-pages absolute right-0 top-1.5 bottom-1.5 z-0 w-4 translate-x-[calc(100%-2px)] rounded-r-sm"
+          aria-hidden="true"
+        />
+        <div
+          className="book-bottom-edge absolute bottom-0 left-2 right-1 z-0 h-3 translate-y-[calc(100%-2px)] rounded-b-sm"
+          aria-hidden="true"
+        />
+        <img
+          src={image}
+          alt={title}
+          className="book-cover relative z-10 block w-full aspect-[3/4] rounded-[2px] object-cover"
+        />
+        <div className="book-gloss pointer-events-none absolute inset-0 z-20" aria-hidden="true" />
+      </div>
+      <figcaption className="sr-only">{title}</figcaption>
+    </figure>
+  );
+}
+
 /* ══════════════════════════════════════════════
    1. HERO
 ══════════════════════════════════════════════ */
@@ -257,12 +299,7 @@ function PromiseSection() {
 
         <div className="flex justify-center md:justify-end">
           {bookCover ? (
-            <img
-              src={bookCover}
-              alt="Dominio Mental"
-              className="w-52 md:w-64 shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500"
-              style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.9), 0 0 30px rgba(177,45,59,0.2)' }}
-            />
+            <BookMockup image={bookCover} title="Dominio Mental" featured />
           ) : (
             <div
               className="w-52 md:w-64 bg-[#1a1a1a] border border-[#B12D3B]/40 flex items-center justify-center rotate-2 hover:rotate-0 transition-transform duration-500"
@@ -503,11 +540,7 @@ function BonusSection() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
               {b.image ? (
-                <img
-                  src={b.image}
-                  alt={b.title}
-                  className="w-full shadow-2xl hover:scale-105 transition-transform duration-300"
-                />
+                <BookMockup image={b.image} title={b.title} />
               ) : (
                 <div
                   className="w-full bg-[#1a1a1a] border border-[#B12D3B]/30 flex items-center justify-center hover:scale-105 transition-transform duration-300"
