@@ -335,18 +335,31 @@
 }
 
 .book-shell {
-  transform: rotateY(-7deg) rotateX(1deg) rotateZ(1deg);
+  isolation: isolate;
+  transform: rotateY(-5deg) rotateX(1deg) rotateZ(0.5deg);
   transform-style: preserve-3d;
   transition:
     transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
     filter 600ms ease;
-  filter: drop-shadow(12px 14px 0 rgba(20, 4, 8, 0.65));
+  filter: drop-shadow(10px 14px 14px rgba(0, 0, 0, 0.72));
+}
+
+.book-shell::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 3px -4px -5px 3px;
+  border-radius: 3px;
+  background: linear-gradient(135deg, #1a0509 0%, #54121e 48%, #21070d 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(210, 74, 89, 0.34),
+    inset -4px -5px 8px rgba(0, 0, 0, 0.48);
 }
 
 .book-scene:hover .book-shell,
 .book-scene:focus-within .book-shell {
-  transform: translateY(-8px) rotateY(-17deg) rotateX(3deg) rotateZ(0deg) scale(1.025);
-  filter: drop-shadow(18px 20px 0 rgba(20, 4, 8, 0.72));
+  transform: translateY(-7px) rotateY(-10deg) rotateX(2deg) rotateZ(0deg) scale(1.02);
+  filter: drop-shadow(12px 18px 17px rgba(0, 0, 0, 0.78));
 }
 
 .book-cover {
@@ -362,38 +375,6 @@
     inset -12px 0 18px rgba(0, 0, 0, 0.4),
     0 0 0 1px rgba(210, 74, 89, 0.75),
     0 0 28px rgba(177, 45, 59, 0.22);
-}
-
-.book-spine {
-  background:
-    linear-gradient(90deg, #130407 0%, #4d121d 46%, #1c060b 100%);
-  box-shadow:
-    inset 2px 0 3px rgba(210, 74, 89, 0.28),
-    -4px 0 8px rgba(0, 0, 0, 0.5);
-  transform: translateX(calc(-100% + 2px)) rotateY(-16deg);
-  transform-origin: right center;
-}
-
-.book-pages {
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      #b6a6a0 0,
-      #b6a6a0 1px,
-      #4a3435 1px,
-      #4a3435 2px
-    );
-  box-shadow:
-    inset 2px 0 5px rgba(255, 223, 214, 0.2),
-    5px 0 10px rgba(0, 0, 0, 0.55);
-  transform: translateX(calc(100% - 2px)) rotateY(16deg);
-  transform-origin: left center;
-}
-
-.book-bottom-edge {
-  background: linear-gradient(180deg, #4b181f, #170407);
-  transform: translateY(calc(100% - 2px)) rotateX(-16deg);
-  transform-origin: top center;
 }
 
 .book-gloss {

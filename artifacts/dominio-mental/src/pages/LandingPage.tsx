@@ -168,19 +168,7 @@ function BookMockup({
       }`}
       aria-label={`Libro: ${title}`}
     >
-      <div className="book-shell relative ml-2 md:ml-3">
-        <div
-          className="book-spine absolute left-0 top-1 bottom-1 z-0 w-3 -translate-x-[calc(100%-2px)] rounded-l-sm"
-          aria-hidden="true"
-        />
-        <div
-          className="book-pages absolute right-0 top-1.5 bottom-1.5 z-0 w-4 translate-x-[calc(100%-2px)] rounded-r-sm"
-          aria-hidden="true"
-        />
-        <div
-          className="book-bottom-edge absolute bottom-0 left-2 right-1 z-0 h-3 translate-y-[calc(100%-2px)] rounded-b-sm"
-          aria-hidden="true"
-        />
+      <div className="book-shell relative">
         <img
           src={image}
           alt={title}
