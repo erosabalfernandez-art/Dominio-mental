@@ -50,7 +50,7 @@ function useCountdown(initialHours: number = 24) {
 function TimerBar() {
   const { hours, minutes, seconds } = useCountdown(24);
   return (
-    <div className="w-full bg-gradient-to-r from-[#4A0808] via-[#6B0F0F] to-[#4A0808] py-2.5 px-4 flex items-center justify-center gap-4 text-white border-b border-[#B12D3B]/20">
+    <div className="w-full bg-gradient-to-r from-[#4A0808] via-[#6B0F0F] to-[#4A0808] py-1.5 px-4 flex items-center justify-center gap-2 md:gap-4 text-white border-b border-[#B12D3B]/20">
       <div className="flex items-center gap-2">
         <FaClock className="text-[#B12D3B] flex-shrink-0 text-sm animate-pulse" />
         <span
@@ -164,7 +164,7 @@ function BookMockup({
   return (
     <figure
       className={`book-float book-scene relative mx-auto ${
-        featured ? 'w-56 md:w-72' : 'w-full'
+        featured ? 'w-52 md:w-60' : 'w-full'
       }`}
       aria-label={`Libro: ${title}`}
     >
@@ -193,9 +193,9 @@ function HeroSection() {
         <div className="absolute inset-0 bg-[#0A0A0A]/65" />
       </div>
 
-      <div className="grid md:grid-cols-2 min-h-[85vw] md:min-h-[70vh]">
+      <div className="grid md:grid-cols-2 min-h-[75vw] md:min-h-[58vh]">
         {/* LEFT: text */}
-        <div className="relative z-10 flex flex-col justify-center px-6 md:px-10 py-10 md:py-12">
+        <div className="relative z-10 flex flex-col justify-center px-6 md:px-10 py-7 md:py-8">
           <motion.h1
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -232,7 +232,7 @@ function HeroSection() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, delay: 0.55, ease: 'easeOut' }}
-            className="text-white/70 text-sm md:text-base mb-8 leading-relaxed"
+            className="text-white/70 text-sm md:text-base mb-5 leading-relaxed"
           >
             Un manual de disciplina, filosofía y combate interior.
           </motion.p>
@@ -265,8 +265,8 @@ function HeroSection() {
 ══════════════════════════════════════════════ */
 function PromiseSection() {
   return (
-    <FadeIn className="bg-[#111111] py-10 md:py-14 px-6 md:px-10">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+    <FadeIn className="bg-[#111111] py-7 md:py-9 px-6 md:px-10">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 items-center">
         <div>
           <p className="text-[#A52A3A] font-black text-xl md:text-2xl uppercase tracking-wide mb-2"
              style={{ fontFamily: "'Oswald', sans-serif" }}>
@@ -324,13 +324,13 @@ function ChecklistSection() {
 
       <div className="grid md:grid-cols-2">
         {/* LEFT: content */}
-        <FadeIn className="relative z-10 py-10 md:py-14 px-6 md:px-10">
+          <FadeIn className="relative z-10 py-7 md:py-9 px-6 md:px-10">
           <h2 className="text-3xl md:text-4xl font-black text-[#D24A59] mb-2"
               style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>
             ¿QUÉ VAS A APRENDER?
           </h2>
           <CrimsonDivider />
-          <div className="space-y-5 mt-5">
+          <div className="space-y-3 mt-4">
             {checklistItems.map((item, i) => (
               <motion.div
                 key={i}
@@ -369,7 +369,7 @@ const pillars = [
 
 function PillarsSection() {
   return (
-    <FadeIn className="bg-[#141414] py-8 px-4">
+      <FadeIn className="bg-[#141414] py-5 px-4">
       <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3">
         {pillars.map((p, i) => (
           <motion.div
@@ -378,9 +378,9 @@ function PillarsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.08 }}
-            className="flex flex-col items-center text-center p-4 border border-[#B12D3B]/25 hover:border-[#D24A59]/70 transition-all duration-300"
+            className="flex flex-col items-center text-center p-3 border border-[#B12D3B]/25 hover:border-[#D24A59]/70 transition-all duration-300"
           >
-            <p.icon className="text-[#D24A59] text-3xl mb-2" />
+            <p.icon className="text-[#D24A59] text-3xl mb-1" />
             <p className="text-[#D24A59] font-black text-xs md:text-sm uppercase tracking-wide leading-tight mb-1"
                style={{ fontFamily: "'Oswald', sans-serif" }}>
               {p.title}
@@ -413,8 +413,8 @@ function ImpactQuote() {
         </div>
 
         {/* RIGHT: quote text */}
-        <FadeIn className="relative z-10 flex flex-col justify-center py-10 md:py-14 px-6 md:px-10">
-          <div className="border border-[#B12D3B]/50 p-6 md:p-8 relative">
+      <FadeIn className="relative z-10 flex flex-col justify-center py-7 md:py-9 px-6 md:px-10">
+           <div className="border border-[#B12D3B]/50 p-4 md:p-6 relative">
             <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#D24A59] -translate-x-0.5 -translate-y-0.5" />
             <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#D24A59] translate-x-0.5 -translate-y-0.5" />
             <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[#D24A59] -translate-x-0.5 translate-y-0.5" />
@@ -452,9 +452,9 @@ function PriceBlock({ id }: { id?: string }) {
   }, [isInView]);
 
   return (
-    <FadeIn className="bg-[#111111] py-10 md:py-14 px-4">
+    <FadeIn className="bg-[#111111] py-7 md:py-9 px-4">
       <div ref={ref} id={id} className="max-w-xl mx-auto text-center">
-        <p className="text-[#D24A59] uppercase tracking-widest text-xs font-bold mb-4"
+        <p className="text-[#D24A59] uppercase tracking-widest text-xs font-bold mb-2"
            style={{ fontFamily: "'Oswald', sans-serif" }}>
           OBTENÉ ACCESO COMPLETO
         </p>
@@ -467,11 +467,11 @@ function PriceBlock({ id }: { id?: string }) {
           />
         </div>
 
-        <div className="text-[#3DDC84] text-7xl md:text-8xl font-black mb-2"
+        <div className="text-[#3DDC84] text-6xl md:text-7xl font-black mb-1"
              style={{ fontFamily: "'Bebas Neue', 'Oswald', sans-serif" }}>
           $15
         </div>
-        <p className="text-gray-500 text-sm mb-6">Pago único. Sin suscripciones ocultas.</p>
+        <p className="text-gray-500 text-sm mb-4">Pago único. Sin suscripciones ocultas.</p>
 
         <div className="flex justify-center">
           <a
@@ -480,7 +480,7 @@ function PriceBlock({ id }: { id?: string }) {
             className="hotmart-fb hotmart__button-checkout inline-flex items-center justify-center bg-[#2EAD5B] p-1 shadow-[0_0_24px_rgba(46,173,91,0.3)] transition-all duration-300 hover:bg-[#3DDC84] hover:shadow-[0_0_30px_rgba(61,220,132,0.45)]"
           >
             <span
-              className="inline-flex items-center justify-center bg-[#2EAD5B] hover:bg-[#3DDC84] text-white font-black uppercase tracking-[0.18em] px-8 py-3 transition-colors duration-300"
+              className="inline-flex items-center justify-center bg-[#2EAD5B] hover:bg-[#3DDC84] text-white font-black uppercase tracking-[0.18em] px-8 py-2.5 transition-colors duration-300"
             >
               Comprar ahora
             </span>
@@ -503,9 +503,9 @@ const bonuses = [
 
 function BonusSection() {
   return (
-    <FadeIn className="bg-[#0A0A0A] py-10 md:py-14 px-4">
+    <FadeIn className="bg-[#0A0A0A] py-7 md:py-9 px-4">
       <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-8">
+        <div className="text-center mb-5">
           <p className="text-white/50 text-sm uppercase tracking-widest mb-1"
              style={{ fontFamily: "'Oswald', sans-serif" }}>
             LLEVÁS TODO ESTO JUNTO CON DOMINIO MENTAL
@@ -518,7 +518,7 @@ function BonusSection() {
         </div>
 
         {/* Book covers */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
           {bonuses.map((b, i) => (
             <motion.div
               key={i}
@@ -542,7 +542,7 @@ function BonusSection() {
         </div>
 
         {/* Descriptions */}
-        <div className="space-y-4">
+        <div className="space-y-2 md:grid md:grid-cols-2 md:gap-3 md:space-y-0">
           {bonuses.map((b, i) => (
             <motion.div
               key={i}
@@ -550,7 +550,7 @@ function BonusSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="flex gap-3 items-start border border-[#B12D3B]/25 p-4"
+              className="flex gap-3 items-start border border-[#B12D3B]/25 p-3"
             >
               <FaShieldAlt className="text-[#D24A59] text-lg flex-shrink-0 mt-0.5" />
               <div>
@@ -573,10 +573,10 @@ function BonusSection() {
 ══════════════════════════════════════════════ */
 function GuaranteeSection() {
   return (
-    <FadeIn className="bg-[#111111] py-8 px-4">
+    <FadeIn className="bg-[#111111] py-5 px-4">
       <div className="max-w-xl mx-auto">
-        <div className="border border-[#B12D3B]/35 p-6 md:p-8 flex gap-5 items-center">
-          <FaShieldAlt className="text-[#D24A59] text-5xl flex-shrink-0" />
+        <div className="border border-[#B12D3B]/35 p-4 md:p-6 flex gap-4 items-center">
+          <FaShieldAlt className="text-[#D24A59] text-4xl flex-shrink-0" />
           <div>
             <h3 className="text-xl md:text-2xl font-black text-[#D24A59] mb-1"
                 style={{ fontFamily: "'EB Garamond', Georgia, serif" }}>
@@ -615,21 +615,21 @@ const TESTIMONIALS = [
 
 function TestimonialsSection() {
   return (
-    <FadeIn className="bg-[#0A0A0A] py-10 px-4">
+    <FadeIn className="bg-[#0A0A0A] py-7 px-4">
       <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-5">
         {TESTIMONIALS.map((t) => (
-          <div key={t.name} className="bg-[#1C1C1C] border border-[#B12D3B]/25 p-6 flex flex-col items-center">
+          <div key={t.name} className="bg-[#1C1C1C] border border-[#B12D3B]/25 p-4 flex flex-col items-center">
             <img
               src={t.photo}
               alt={t.name}
-              className="w-16 h-16 rounded-full object-cover mb-3 border-2 border-[#B12D3B]/50"
+              className="w-16 h-16 rounded-full object-cover mb-2 border-2 border-[#B12D3B]/50"
             />
-            <div className="flex justify-center gap-1 mb-3">
+            <div className="flex justify-center gap-1 mb-2">
               {[...Array(5)].map((_, j) => (
                 <AiFillStar key={j} className="text-[#3DDC84] text-base" />
               ))}
             </div>
-            <p className="text-white/70 text-sm text-center italic mb-3">"{t.text}"</p>
+            <p className="text-white/70 text-sm text-center italic mb-2">"{t.text}"</p>
             <p className="text-[#D24A59] text-center text-sm font-semibold">{t.name}</p>
           </div>
         ))}
