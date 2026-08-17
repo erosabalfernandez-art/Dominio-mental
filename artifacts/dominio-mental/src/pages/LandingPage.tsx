@@ -71,7 +71,7 @@ function TimerBar() {
           $47
         </span>
         <span
-          className="text-[#B12D3B] text-lg leading-none"
+          className="text-[#3DDC84] text-lg leading-none"
           style={{ fontFamily: "'Bebas Neue', 'Oswald', sans-serif", letterSpacing: '0.05em' }}
         >
           $15
@@ -467,7 +467,7 @@ function PriceBlock({ id }: { id?: string }) {
           />
         </div>
 
-        <div className="text-[#D24A59] text-7xl md:text-8xl font-black mb-2"
+        <div className="text-[#3DDC84] text-7xl md:text-8xl font-black mb-2"
              style={{ fontFamily: "'Bebas Neue', 'Oswald', sans-serif" }}>
           $15
         </div>
@@ -477,10 +477,10 @@ function PriceBlock({ id }: { id?: string }) {
           <a
             onClick={() => false}
             href="https://pay.hotmart.com/Y106958140E?checkoutMode=2"
-            className="hotmart-fb hotmart__button-checkout"
+            className="hotmart-fb hotmart__button-checkout inline-flex items-center justify-center bg-[#2EAD5B] p-1 shadow-[0_0_24px_rgba(46,173,91,0.3)] transition-all duration-300 hover:bg-[#3DDC84] hover:shadow-[0_0_30px_rgba(61,220,132,0.45)]"
           >
             <span
-              className="inline-flex items-center justify-center bg-[#B12D3B] hover:bg-[#D24A59] text-white font-black uppercase tracking-[0.18em] px-8 py-3 transition-colors duration-300"
+              className="inline-flex items-center justify-center bg-[#2EAD5B] hover:bg-[#3DDC84] text-white font-black uppercase tracking-[0.18em] px-8 py-3 transition-colors duration-300"
             >
               Comprar ahora
             </span>
@@ -626,7 +626,7 @@ function TestimonialsSection() {
             />
             <div className="flex justify-center gap-1 mb-3">
               {[...Array(5)].map((_, j) => (
-                <AiFillStar key={j} className="text-[#D24A59] text-base" />
+                <AiFillStar key={j} className="text-[#3DDC84] text-base" />
               ))}
             </div>
             <p className="text-white/70 text-sm text-center italic mb-3">"{t.text}"</p>
